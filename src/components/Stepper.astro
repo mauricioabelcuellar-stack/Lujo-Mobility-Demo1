@@ -1,0 +1,44 @@
+---
+// Pasos del proceso de reserva. "timeline": línea de tiempo vertical detallada. "compact": fila horizontal resumida.
+import content from '../content.json';
+import Icon from './Icon.astro';
+
+const { variant = 'timeline', tone = 'dark' } = Astro.props;
+const { pasos } = content.comoFunciona;
+const isLight = tone === 'light';
+---
+
+{
+  variant === 'compact' ? (
+    <ol class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8" data-reveal-stagger>
+      {pasos.map((paso) => (
+        <li class:list={['border-t pt-8', isLight ? 'border-ink-950/20' : 'border-white/15']}>
+          <span class:list={['font-serif text-sm', isLight ? 'text-stone-ink' : 'text-silver-400']}>{paso.numero}</span>
+          <Icon name={paso.icono} size={24} strokeWidth={1.1} class:list={['mt-6', isLight ? 'text-ink-950' : 'text-silver-200']} />
+          <h3 class:list={['mt-5 text-xl leading-snug', isLight ? 'text-ink-950' : 'text-white']}>{paso.titulo}</h3>
+        </li>
+      ))}
+    </ol>
+  ) : (
+    <ol class="relative">
+      {pasos.map((paso, index) => (
+        <li class="relative grid grid-cols-[3.5rem_1fr] gap-6 pb-14 last:pb-0 sm:grid-cols-[5rem_1fr] sm:gap-10 lg:grid-cols-[6rem_1fr_1.2fr] lg:gap-14" data-reveal>
+          {index < pasos.length - 1 && (
+            <span
+              class="absolute top-16 bottom-2 left-[1.75rem] w-px bg-gradient-to-b from-white/30 to-white/5 sm:left-[2.5rem]"
+              aria-hidden="true"
+            />
+          )}
+          <span class="relative grid size-14 place-items-center rounded-full border border-white/30 bg-ink-950 font-serif text-lg text-white sm:size-20 sm:text-2xl">
+            {paso.numero}
+          </span>
+          <div class="pt-2 sm:pt-5">
+            <Icon name={paso.icono} size={22} strokeWidth={1.2} class="text-silver-300" />
+            <h3 class="mt-4 text-2xl text-white sm:text-3xl">{paso.titulo}</h3>
+          </div>
+          <p class="col-start-2 text-lg leading-relaxed text-silver-300 lg:col-start-3 lg:pt-14">{paso.descripcion}</p>
+        </li>
+      ))}
+    </ol>
+  )
+}

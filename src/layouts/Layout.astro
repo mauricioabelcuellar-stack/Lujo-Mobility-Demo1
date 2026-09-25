@@ -1,0 +1,82 @@
+---
+// Layout base: metadatos SEO/Open Graph por página, favicon, header, footer, WhatsApp flotante y animaciones.
+import '@fontsource-variable/jost';
+import '@fontsource-variable/playfair-display';
+import '../styles/global.css';
+import content from '../content.json';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const {
+  title,
+  description,
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = '/og-image.jpg',
+  canonical,
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const site = Astro.site ?? new URL(content.site.url);
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonicalUrl = new URL(canonical ?? pathname, site).href;
+const ogImageUrl = new URL(ogImage, site).href;
+---
+
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:site_name" content={content.site.nombre} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Activa el estado inicial de las animaciones solo si hay JS y el usuario no pidió reducir movimiento.
+         Si el script de animaciones no carga, el contenido se vuelve visible igualmente. -->
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          root.classList.add('motion-ok');
+          setTimeout(function () {
+            if (!root.dataset.motionReady) root.classList.remove('motion-ok');
+          }, 3000);
+        }
+      })();
+    </script>
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a href="#contenido" class="skip-link">{content.ui.saltarContenido}</a>
+    <Header />
+    <main id="contenido">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <script>
+      import '../scripts/motion.js';
+    </script>
+  </body>
+</html>

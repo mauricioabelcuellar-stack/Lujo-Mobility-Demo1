@@ -1,0 +1,37 @@
+---
+// Cabecera visual de las páginas internas: imagen de fondo, breadcrumb opcional, eyebrow, título y descripción.
+import { Image } from 'astro:assets';
+import { getImageAsset } from '../lib/images.js';
+import Breadcrumb from './Breadcrumb.astro';
+
+const { image, alt, eyebrow, title, description, breadcrumb, size = 'md' } = Astro.props;
+const asset = getImageAsset(image);
+const heights = {
+  md: 'min-h-[34rem] lg:min-h-[40rem]',
+  lg: 'min-h-[100svh] lg:min-h-[46rem]',
+};
+---
+
+<section class:list={['relative isolate flex items-end overflow-hidden bg-ink-950', heights[size]]}>
+  <div class="absolute inset-0 -z-20" data-parallax>
+    <Image
+      src={asset}
+      alt={alt}
+      widths={[640, 1024, 1600, 2000]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="h-[112%] w-full object-cover"
+    />
+  </div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/65 to-ink-950/45" aria-hidden="true"></div>
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/80 to-transparent" aria-hidden="true"></div>
+
+  <div class="container-lux pt-36 pb-16 sm:pb-20 lg:pb-24">
+    {breadcrumb && <Breadcrumb items={breadcrumb} />}
+    {eyebrow && <p class="eyebrow eyebrow-line text-silver-300" data-hero-item>{eyebrow}</p>}
+    <h1 class="heading-xl mt-6 max-w-4xl text-white" data-hero-item>{title}</h1>
+    {description && <p class="mt-6 max-w-2xl text-lg leading-relaxed text-silver-200" data-hero-item>{description}</p>}
+    <slot />
+  </div>
+</section>

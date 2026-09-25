@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i \"s#const trig = await page.\\\\$\\('\\\\[role=dialog\\\\] button\\\\[aria-controls\\\\]'\\);#const trig = \\(await page.\\\\$\\\\$\\('[role=dialog] button'\\)\\).find\\(Boolean\\) \\\\&\\\\& \\(await page.evaluateHandle\\(\\(\\) => [...document.querySelectorAll\\('[role=dialog] button'\\)].find\\(\\(b\\) => b.textContent.includes\\('Servicios'\\)\\)\\)\\);#\" menu.cjs)",
+      "Bash(node menu.cjs)",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "lujo-mobility",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sitio institucional demo de Lujo Mobility — transporte ejecutivo en Lima, Perú.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "assets:brand": "node scripts/brand-assets.mjs",
+    "assets:images": "node scripts/fetch-stock-images.mjs"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.3",
+    "@astrojs/sitemap": "3.2.1",
+    "@fontsource-variable/jost": "^5.3.0",
+    "@fontsource-variable/playfair-display": "^5.3.0",
+    "@radix-ui/react-accordion": "^1.2.20",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^4.16.19",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^11.18.2",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26",
+    "lucide-react": "^1.48.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^4.3.3"
+  }
+}

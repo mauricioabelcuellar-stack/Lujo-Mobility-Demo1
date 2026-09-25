@@ -1,0 +1,101 @@
+---
+// Footer institucional oscuro: logo, descripción, navegación, servicios, contacto y redes sociales.
+import { Image } from 'astro:assets';
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
+import content from '../content.json';
+import logo from '../assets/brand/logo-lujo-mobility.png';
+import { navItems, serviceUrl, services, whatsappUrl, phoneUrl, emailUrl } from '../lib/site.js';
+import { fill } from '../lib/utils.js';
+import BrandIcon from './BrandIcon.astro';
+
+const { footer, site, ui, contacto } = content;
+const year = new Date().getFullYear();
+const headingClass = 'eyebrow mb-6 text-silver-400';
+const linkClass = 'text-sm text-silver-300 transition-colors hover:text-white';
+---
+
+<footer class="border-t border-white/10 bg-ink-950 text-silver-300">
+  <div class="container-lux grid gap-14 py-20 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10 lg:py-24">
+    <div class="sm:col-span-2 lg:col-span-4">
+      <Image src={logo} alt={site.nombre} widths={[170, 340]} sizes="170px" class="h-auto w-[150px] lg:w-[170px]" />
+      <p class="mt-8 max-w-sm text-[0.95rem] leading-relaxed text-silver-400">{footer.descripcion}</p>
+      <p class="eyebrow mt-8 text-silver-500">{site.eslogan}</p>
+    </div>
+
+    <nav aria-label={footer.navegacionTitulo} class="lg:col-span-2">
+      <h2 class={headingClass}>{footer.navegacionTitulo}</h2>
+      <ul class="space-y-3.5">
+        {navItems.map((item) => <li><a href={item.href} class={linkClass}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <nav aria-label={footer.serviciosTitulo} class="lg:col-span-3">
+      <h2 class={headingClass}>{footer.serviciosTitulo}</h2>
+      <ul class="space-y-3.5">
+        {services.map((service) => <li><a href={serviceUrl(service.slug)} class={linkClass}>{service.nombre}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="lg:col-span-3">
+      <h2 class={headingClass}>{footer.contactoTitulo}</h2>
+      <ul class="space-y-4 text-sm">
+        <li>
+          <a href={phoneUrl} class={`${linkClass} inline-flex items-center gap-3`}>
+            <Phone size={16} strokeWidth={1.3} aria-hidden="true" />
+            {site.telefono}
+          </a>
+        </li>
+        <li>
+          <a
+            href={whatsappUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`${linkClass} inline-flex items-center gap-3`}
+            aria-label={`${contacto.whatsappLabel} ${site.whatsappVisible} (${ui.nuevaPestana})`}
+          >
+            <BrandIcon name="whatsapp" size={16} />
+            {site.whatsappVisible}
+          </a>
+        </li>
+        <li>
+          <a href={emailUrl} class={`${linkClass} inline-flex items-center gap-3`}>
+            <Mail size={16} strokeWidth={1.3} aria-hidden="true" />
+            {site.email}
+          </a>
+        </li>
+        <li class="flex items-center gap-3 text-silver-400">
+          <Clock size={16} strokeWidth={1.3} aria-hidden="true" />
+          {site.horario}
+        </li>
+        <li class="flex items-center gap-3 text-silver-400">
+          <MapPin size={16} strokeWidth={1.3} aria-hidden="true" />
+          {site.ciudad}
+        </li>
+      </ul>
+
+      <h2 class={`${headingClass} mt-10`}>{footer.redesTitulo}</h2>
+      <ul class="flex gap-3">
+        {
+          footer.redes.map((red) => (
+            <li>
+              <a
+                href={red.url}
+                aria-label={red.nombre}
+                class="grid size-11 place-items-center border border-white/15 text-silver-300 transition-colors duration-500 hover:border-white/60 hover:text-white"
+              >
+                <BrandIcon name={red.icono} size={17} />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="container-lux flex flex-col gap-3 py-7 text-xs text-silver-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>{fill(footer.copyright, { anio: year })}</p>
+      <p>{footer.creditos}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+---
+// Página Flota: grilla de vehículos de ejemplo con imagen, categoría, capacidad y características.
+import content from '../content.json';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import VehicleCard from '../components/VehicleCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { routes } from '../lib/site.js';
+
+const { flota, seo, navigation } = content;
+---
+
+<Layout title={seo.flota.title} description={seo.flota.description}>
+  <PageHero
+    image={flota.imagen}
+    alt={flota.imagenAlt}
+    eyebrow={flota.eyebrow}
+    title={flota.titulo}
+    description={flota.descripcion}
+    breadcrumb={[{ label: navigation.inicio, href: routes.inicio }, { label: navigation.flota }]}
+  />
+
+  <section class="section bg-ivory">
+    <div class="container-lux">
+      <SectionHeading title={flota.introTitulo} description={flota.introTexto} tone="light" />
+      <ul class="mt-14 grid gap-6 md:grid-cols-2 lg:mt-20 lg:gap-8" data-reveal-stagger>
+        {flota.items.map((vehicle) => <li><VehicleCard vehicle={vehicle} /></li>)}
+      </ul>
+      <p class="mt-10 text-sm text-stone-ink">{flota.nota}</p>
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

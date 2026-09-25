@@ -1,0 +1,36 @@
+---
+// Listado de servicios: cabecera, introducción y grilla con enlace a cada página de servicio.
+import content from '../../content.json';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ServicesGrid from '../../components/ServicesGrid.astro';
+import Pillars from '../../components/Pillars.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { routes } from '../../lib/site.js';
+
+const { servicios, seo, navigation } = content;
+---
+
+<Layout title={seo.servicios.title} description={seo.servicios.description}>
+  <PageHero
+    image={servicios.imagen}
+    alt={servicios.imagenAlt}
+    eyebrow={servicios.eyebrow}
+    title={servicios.titulo}
+    description={servicios.descripcion}
+    breadcrumb={[{ label: navigation.inicio, href: routes.inicio }, { label: navigation.servicios }]}
+  />
+
+  <section class="section bg-ink-950">
+    <div class="container-lux">
+      <div class="mb-14 lg:mb-20">
+        <SectionHeading title={servicios.introTitulo} description={servicios.introTexto} />
+      </div>
+      <ServicesGrid />
+    </div>
+  </section>
+
+  <Pillars tone="light" />
+  <CtaBand />
+</Layout>

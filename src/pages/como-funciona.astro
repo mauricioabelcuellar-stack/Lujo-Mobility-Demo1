@@ -1,0 +1,34 @@
+---
+// Página Cómo funciona: línea de tiempo con los pasos del proceso de reserva.
+import content from '../content.json';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Stepper from '../components/Stepper.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { routes } from '../lib/site.js';
+
+const { comoFunciona, seo, navigation } = content;
+---
+
+<Layout title={seo.comoFunciona.title} description={seo.comoFunciona.description}>
+  <PageHero
+    image={comoFunciona.imagen}
+    alt={comoFunciona.imagenAlt}
+    eyebrow={comoFunciona.eyebrow}
+    title={comoFunciona.titulo}
+    description={comoFunciona.descripcion}
+    breadcrumb={[{ label: navigation.inicio, href: routes.inicio }, { label: navigation.comoFunciona }]}
+  />
+
+  <section class="section bg-ink-950">
+    <div class="container-lux">
+      <div class="mb-16 lg:mb-24">
+        <SectionHeading title={comoFunciona.introTitulo} description={comoFunciona.introTexto} />
+      </div>
+      <Stepper />
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

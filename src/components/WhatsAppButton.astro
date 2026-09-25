@@ -1,0 +1,23 @@
+---
+// Botón flotante de WhatsApp visible en todo el sitio. El número proviene de content.json.
+import content from '../content.json';
+import { whatsappUrl } from '../lib/site.js';
+import BrandIcon from './BrandIcon.astro';
+---
+
+<a
+  href={whatsappUrl()}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`${content.ui.whatsappFlotante} (${content.ui.nuevaPestana})`}
+  class="group fixed right-5 bottom-5 z-40 grid size-14 place-items-center rounded-full border border-white/25 bg-ink-950/90 text-white shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] backdrop-blur transition-colors duration-500 hover:border-white/60 hover:bg-white hover:text-ink-950 sm:right-8 sm:bottom-8 sm:size-16"
+>
+  <span class="wa-halo pointer-events-none absolute inset-0 rounded-full border border-white/40" aria-hidden="true"></span>
+  <BrandIcon name="whatsapp" size={26} />
+  <span
+    class="pointer-events-none absolute right-full mr-4 hidden translate-x-2 whitespace-nowrap bg-white px-4 py-2 text-xs tracking-[0.2em] text-ink-950 uppercase opacity-0 transition duration-500 group-hover:translate-x-0 group-hover:opacity-100 md:block"
+    aria-hidden="true"
+  >
+    {content.ui.whatsappFlotante}
+  </span>
+</a>

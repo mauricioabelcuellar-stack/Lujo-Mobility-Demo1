@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "resolveJsonModule": true,
+    "checkJs": false
+  },
+  "include": [".astro/types.d.ts", "src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}

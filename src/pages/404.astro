@@ -1,0 +1,41 @@
+---
+// Página 404 personalizada con la identidad del sitio (también la usa el hosting para slugs inexistentes).
+import { Image } from 'astro:assets';
+import { ArrowRight } from 'lucide-react';
+import content from '../content.json';
+import Layout from '../layouts/Layout.astro';
+import { getImageAsset } from '../lib/images.js';
+import { routes } from '../lib/site.js';
+
+const { error404, seo } = content;
+---
+
+<Layout title={seo.error404.title} description={seo.error404.description} noindex>
+  <section class="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-ink-950">
+    <Image
+      src={getImageAsset(error404.imagen)}
+      alt={error404.imagenAlt}
+      widths={[640, 1024, 1600, 2000]}
+      sizes="100vw"
+      loading="eager"
+      class="absolute inset-0 -z-20 h-full w-full object-cover opacity-70"
+    />
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/50 to-ink-950/70" aria-hidden="true"></div>
+
+    <div class="container-lux pt-32 pb-24 text-center">
+      <p class="silver-text font-serif text-[7rem] leading-none sm:text-[11rem]" aria-hidden="true" data-hero-item>
+        {error404.codigo}
+      </p>
+      <p class="eyebrow mt-6 text-silver-400" data-hero-item>{error404.eyebrow}</p>
+      <h1 class="heading-lg mt-5 text-white" data-hero-item>{error404.titulo}</h1>
+      <p class="mx-auto mt-6 max-w-lg text-lg leading-relaxed text-silver-300" data-hero-item>{error404.descripcion}</p>
+      <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row" data-hero-item>
+        <a href={routes.inicio} class="btn btn-light">
+          {error404.cta}
+          <ArrowRight size={18} strokeWidth={1.3} aria-hidden="true" />
+        </a>
+        <a href={routes.servicios} class="btn btn-outline">{error404.ctaSecundario}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

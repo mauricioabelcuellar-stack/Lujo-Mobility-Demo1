@@ -1,0 +1,68 @@
+---
+// Página Nosotros: historia, pilares de la marca y compromiso de servicio.
+import { Image } from 'astro:assets';
+import { Check } from 'lucide-react';
+import content from '../content.json';
+import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Pillars from '../components/Pillars.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { getImageAsset } from '../lib/images.js';
+
+const { nosotros, seo } = content;
+const { historia, compromiso } = nosotros;
+---
+
+<Layout title={seo.nosotros.title} description={seo.nosotros.description}>
+  <PageHero
+    image={nosotros.imagen}
+    alt={nosotros.imagenAlt}
+    eyebrow={nosotros.eyebrow}
+    title={nosotros.titulo}
+    description={nosotros.descripcion}
+  />
+
+  <section class="section bg-ivory text-ink-950">
+    <div class="container-lux grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
+      <div class="lg:col-span-5" data-reveal>
+        <Image
+          src={getImageAsset(historia.imagen)}
+          alt={historia.imagenAlt}
+          widths={[480, 800, 1100]}
+          sizes="(min-width: 1024px) 40vw, 100vw"
+          class="aspect-[4/5] w-full object-cover"
+        />
+      </div>
+      <div class="lg:col-span-7 lg:pt-10" data-reveal>
+        <p class="eyebrow eyebrow-line text-stone-ink">{historia.eyebrow}</p>
+        <h2 class="heading-lg mt-6">{historia.titulo}</h2>
+        {historia.parrafos.map((p) => <p class="mt-6 text-lg leading-relaxed text-stone-ink">{p}</p>)}
+      </div>
+    </div>
+  </section>
+
+  <Pillars />
+
+  <section class="section border-t border-white/10 bg-ink-900">
+    <div class="container-lux grid gap-14 lg:grid-cols-2 lg:gap-24">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-line text-silver-400">{compromiso.eyebrow}</p>
+        <h2 class="heading-lg mt-6 text-white">{compromiso.titulo}</h2>
+      </div>
+      <ul class="space-y-6" data-reveal-stagger>
+        {
+          compromiso.items.map((item) => (
+            <li class="flex items-start gap-5 border-b border-white/10 pb-6 text-lg text-silver-200">
+              <span class="mt-1 grid size-7 shrink-0 place-items-center rounded-full border border-white/30">
+                <Check size={14} strokeWidth={1.5} aria-hidden="true" />
+              </span>
+              {item}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

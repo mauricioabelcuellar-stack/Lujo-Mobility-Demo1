@@ -1,0 +1,13 @@
+---
+// Renderiza como SVG estático (sin hidratar JS) el icono de lucide-react indicado por nombre en content.json.
+import { icons } from '../lib/icons.js';
+
+const { name, size = 22, strokeWidth = 1.3, class: className } = Astro.props;
+const Component = icons[name];
+
+if (!Component) {
+  throw new Error(`Icono "${name}" no registrado en src/lib/icons.js`);
+}
+---
+
+<Component size={size} strokeWidth={strokeWidth} className={className} aria-hidden="true" />

@@ -1,0 +1,157 @@
+---
+// Página individual de servicio generada con getStaticPaths() a partir de content.json.
+// Los slugs inexistentes no se generan, por lo que el hosting responde con la 404 personalizada.
+import { Image, getImage } from 'astro:assets';
+import { ArrowRight, Check } from 'lucide-react';
+import content from '../../content.json';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import BrandIcon from '../../components/BrandIcon.astro';
+import Icon from '../../components/Icon.astro';
+import ServiceCarousel from '../../components/ServiceCarousel.jsx';
+import { getImageAsset } from '../../lib/images.js';
+import { routes, serviceUrl, services, whatsappUrl } from '../../lib/site.js';
+import { fill } from '../../lib/utils.js';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const { servicios, seo, navigation, ui } = content;
+const image = getImageAsset(service.imagen);
+const whatsappMessage = fill(servicios.whatsappMensaje, { servicio: service.nombre });
+
+// Las imágenes del carrusel (isla React) se optimizan aquí y se pasan ya resueltas.
+const related = await Promise.all(
+  services
+    .filter((item) => item.slug !== service.slug)
+    .map(async (item) => {
+      const optimized = await getImage({ src: getImageAsset(item.imagen), widths: [480, 720, 960], format: 'webp' });
+      return {
+        href: serviceUrl(item.slug),
+        numero: item.numero,
+        nombre: item.nombre,
+        descripcion: item.descripcion,
+        icono: item.icono,
+        image: {
+          src: optimized.src,
+          srcSet: optimized.srcSet.attribute,
+          width: optimized.attributes.width,
+          height: optimized.attributes.height,
+        },
+      };
+    })
+);
+
+const ogImage = await getImage({ src: image, width: 1200, height: 630, format: 'jpg' });
+---
+
+<Layout
+  title={fill(seo.servicio.title, { servicio: service.nombre })}
+  description={service.descripcion}
+  ogImage={ogImage.src}
+>
+  <section class="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-ink-950 lg:min-h-[48rem]">
+    <div class="absolute inset-0 -z-20" data-parallax>
+      <Image
+        src={image}
+        alt={service.imagenAlt}
+        widths={[640, 1024, 1600, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="h-[112%] w-full object-cover"
+      />
+    </div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/60 to-ink-950/40" aria-hidden="true"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/85 to-transparent" aria-hidden="true"></div>
+
+    <div class="container-lux pt-36 pb-16 sm:pb-20 lg:pb-24">
+      <Breadcrumb
+        items={[
+          { label: navigation.inicio, href: routes.inicio },
+          { label: navigation.servicios, href: routes.servicios },
+          { label: service.nombre },
+        ]}
+      />
+      <div class="flex items-center gap-5" data-hero-item>
+        <span class="silver-text font-serif text-6xl leading-none sm:text-7xl">{service.numero}</span>
+        <span class="grid size-14 place-items-center rounded-full border border-white/30 text-white">
+          <Icon name={service.icono} size={22} />
+        </span>
+      </div>
+      <p class="eyebrow mt-8 text-silver-300" data-hero-item>{servicios.detalleEyebrow}</p>
+      <h1 class="heading-xl mt-4 max-w-4xl text-white" data-hero-item>{service.nombre}</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed text-silver-200" data-hero-item>{service.descripcion}</p>
+    </div>
+  </section>
+
+  <section class="section bg-ivory text-ink-950">
+    <div class="container-lux grid gap-16 lg:grid-cols-12 lg:gap-20">
+      <div class="lg:col-span-7" data-reveal>
+        {service.descripcionLarga.map((p, i) => (
+          <p class:list={['leading-relaxed', i === 0 ? 'font-serif text-2xl text-ink-950 sm:text-3xl' : 'mt-8 text-lg text-stone-ink']}>
+            {p}
+          </p>
+        ))}
+      </div>
+      <aside class="lg:col-span-5" data-reveal>
+        <div class="border border-ink-950/15 bg-white p-8 sm:p-10">
+          <h2 class="text-2xl">{servicios.incluyeTitulo}</h2>
+          <ul class="mt-8 space-y-4">
+            {
+              service.incluye.map((item) => (
+                <li class="flex items-start gap-4 text-stone-ink">
+                  <Check size={18} strokeWidth={1.5} class="mt-0.5 shrink-0 text-ink-950" aria-hidden="true" />
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+          <div class="mt-10 border-t border-ink-950/10 pt-8">
+            <p class="font-serif text-xl">{servicios.ctaTitulo}</p>
+            <p class="mt-3 text-stone-ink">{servicios.ctaDescripcion}</p>
+            <div class="mt-8 flex flex-col gap-3">
+              <a
+                href={whatsappUrl(whatsappMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-dark"
+                aria-label={`${servicios.ctaWhatsapp} (${ui.nuevaPestana})`}
+              >
+                <BrandIcon name="whatsapp" size={18} />
+                {servicios.ctaWhatsapp}
+              </a>
+              <a href={routes.contacto} class="btn btn-outline-dark">
+                {servicios.ctaContacto}
+                <ArrowRight size={18} strokeWidth={1.3} aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section overflow-hidden bg-ink-950" aria-labelledby="relacionados-titulo">
+    <div class="container-lux">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-line text-silver-400">{servicios.relacionadosEyebrow}</p>
+        <h2 id="relacionados-titulo" class="heading-lg mt-6 text-white">{servicios.relacionadosTitulo}</h2>
+      </div>
+      <div class="mt-4" data-reveal>
+        <ServiceCarousel
+          client:visible
+          items={related}
+          labels={{
+            region: servicios.relacionadosTitulo,
+            anterior: ui.anterior,
+            siguiente: ui.siguiente,
+            verServicio: ui.verServicio,
+          }}
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

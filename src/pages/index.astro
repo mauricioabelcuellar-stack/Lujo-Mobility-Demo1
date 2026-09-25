@@ -1,0 +1,156 @@
+---
+// Home: hero, presentación, servicios, pilares, flota, empresas, testimonios, proceso y CTA final.
+import { Image } from 'astro:assets';
+import { ArrowRight } from 'lucide-react';
+import content from '../content.json';
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import Pillars from '../components/Pillars.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import TestimonialsCarousel from '../components/TestimonialsCarousel.jsx';
+import Stepper from '../components/Stepper.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { getImageAsset } from '../lib/images.js';
+import { routes } from '../lib/site.js';
+
+const { inicio, testimonios, seo, site, ui } = content;
+const siteUrl = new URL('/', Astro.site ?? site.url).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: site.nombre,
+  description: site.descripcion,
+  url: siteUrl,
+  telephone: site.telefono,
+  email: site.email,
+  image: new URL('/og-image.jpg', siteUrl).href,
+  address: { '@type': 'PostalAddress', addressLocality: site.areaServicio[0], addressCountry: site.pais },
+  areaServed: site.areaServicio.map((name) => ({ '@type': 'City', name })),
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    opens: '00:00',
+    closes: '23:59',
+  },
+};
+---
+
+<Layout title={seo.inicio.title} description={seo.inicio.description} jsonLd={jsonLd}>
+  <Hero />
+
+  <section id="intro" class="section bg-ivory text-ink-950">
+    <div class="container-lux grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
+      <div data-reveal>
+        <p class="eyebrow eyebrow-line text-stone-ink">{inicio.intro.eyebrow}</p>
+        <h2 class="heading-lg mt-6">{inicio.intro.titulo}</h2>
+        {inicio.intro.parrafos.map((p) => <p class="mt-6 text-lg leading-relaxed text-stone-ink">{p}</p>)}
+        <a href={routes.nosotros} class="btn btn-outline-dark mt-10">
+          {inicio.intro.cta}
+          <ArrowRight size={18} strokeWidth={1.3} aria-hidden="true" />
+        </a>
+      </div>
+      <div class="relative" data-reveal>
+        <Image
+          src={getImageAsset(inicio.intro.imagen)}
+          alt={inicio.intro.imagenAlt}
+          widths={[480, 800, 1100]}
+          sizes="(min-width: 1024px) 45vw, 100vw"
+          class="aspect-[4/5] w-full object-cover"
+        />
+        <span class="absolute -bottom-5 -left-5 hidden h-32 w-32 border-b border-l border-ink-950/30 lg:block" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-ink-950" aria-labelledby="servicios-titulo">
+    <div class="container-lux">
+      <div class="mb-14 flex flex-col gap-8 lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
+        <SectionHeading
+          id="servicios-titulo"
+          eyebrow={inicio.servicios.eyebrow}
+          title={inicio.servicios.titulo}
+          description={inicio.servicios.descripcion}
+        />
+        <a href={routes.servicios} class="link-arrow shrink-0 text-silver-200 hover:text-white" data-reveal>
+          {inicio.servicios.cta}
+          <ArrowRight size={16} strokeWidth={1.3} aria-hidden="true" />
+        </a>
+      </div>
+      <ServicesGrid />
+    </div>
+  </section>
+
+  <div class="bg-ink-950"><div class="container-lux"><div class="hairline"></div></div></div>
+  <Pillars />
+
+  <section class="bg-ivory text-ink-950" aria-labelledby="flota-titulo">
+    <div class="grid lg:grid-cols-2">
+      <div class="relative min-h-[22rem] overflow-hidden bg-ink-950 lg:min-h-[40rem]">
+        <Image
+          src={getImageAsset(inicio.flota.imagen)}
+          alt={inicio.flota.imagenAlt}
+          widths={[640, 960, 1400]}
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          class="absolute inset-0 h-full w-full object-cover"
+        />
+      </div>
+      <div class="flex items-center">
+        <div class="max-w-xl px-5 py-20 sm:px-8 lg:px-20 lg:py-28" data-reveal>
+          <p class="eyebrow eyebrow-line text-stone-ink">{inicio.flota.eyebrow}</p>
+          <h2 id="flota-titulo" class="heading-lg mt-6">{inicio.flota.titulo}</h2>
+          <p class="mt-6 text-lg leading-relaxed text-stone-ink">{inicio.flota.descripcion}</p>
+          <a href={routes.flota} class="btn btn-dark mt-10">
+            {inicio.flota.cta}
+            <ArrowRight size={18} strokeWidth={1.3} aria-hidden="true" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ClientLogos />
+
+  <section class="section bg-ink-950" aria-labelledby="testimonios-titulo">
+    <div class="container-lux">
+      <SectionHeading id="testimonios-titulo" eyebrow={testimonios.eyebrow} title={testimonios.titulo} />
+      <div class="mt-14 lg:mt-20" data-reveal>
+        <TestimonialsCarousel
+          client:visible
+          items={testimonios.items}
+          labels={{
+            region: testimonios.titulo,
+            anterior: ui.anterior,
+            siguiente: ui.siguiente,
+            irA: ui.irADiapositiva,
+            estrellas: ui.estrellas,
+          }}
+        />
+      </div>
+      <p class="mt-8 text-xs text-silver-500">{testimonios.nota}</p>
+    </div>
+  </section>
+
+  <section class="section bg-ivory text-ink-950" aria-labelledby="proceso-titulo">
+    <div class="container-lux">
+      <div class="mb-14 flex flex-col gap-8 lg:mb-20 lg:flex-row lg:items-end lg:justify-between">
+        <SectionHeading
+          id="proceso-titulo"
+          eyebrow={inicio.comoFunciona.eyebrow}
+          title={inicio.comoFunciona.titulo}
+          description={inicio.comoFunciona.descripcion}
+          tone="light"
+        />
+        <a href={routes.comoFunciona} class="link-arrow shrink-0 text-ink-950" data-reveal>
+          {inicio.comoFunciona.cta}
+          <ArrowRight size={16} strokeWidth={1.3} aria-hidden="true" />
+        </a>
+      </div>
+      <Stepper variant="compact" tone="light" />
+    </div>
+  </section>
+
+  <CtaBand />
+</Layout>

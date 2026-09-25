@@ -1,0 +1,28 @@
+---
+// Breadcrumb simple y accesible. El último elemento se marca como página actual.
+import { ChevronRight } from 'lucide-react';
+import content from '../content.json';
+
+const { items } = Astro.props;
+---
+
+<nav aria-label={content.ui.breadcrumb} class="mb-8" data-hero-item>
+  <ol class="flex flex-wrap items-center gap-2 text-xs tracking-[0.16em] text-silver-400 uppercase">
+    {
+      items.map((item, index) => (
+        <li class="flex items-center gap-2">
+          {index > 0 && <ChevronRight size={12} strokeWidth={1.3} aria-hidden="true" />}
+          {item.href ? (
+            <a href={item.href} class="transition-colors hover:text-white">
+              {item.label}
+            </a>
+          ) : (
+            <span aria-current="page" class="text-silver-200">
+              {item.label}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

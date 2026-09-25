@@ -1,0 +1,28 @@
+---
+// Encabezado de sección reutilizable (eyebrow + título + descripción) para fondos claros u oscuros.
+const { eyebrow, title, description, tone = 'dark', align = 'left', as: Tag = 'h2', id } = Astro.props;
+const isLight = tone === 'light';
+---
+
+<div class:list={['max-w-3xl', align === 'center' && 'mx-auto text-center']} data-reveal>
+  {
+    eyebrow && (
+      <p class:list={['eyebrow eyebrow-line', isLight ? 'text-stone-ink' : 'text-silver-400']}>{eyebrow}</p>
+    )
+  }
+  <Tag id={id} class:list={['heading-lg mt-6', isLight ? 'text-ink-950' : 'text-white']}>{title}</Tag>
+  {
+    description && (
+      <p
+        class:list={[
+          'mt-6 text-lg leading-relaxed',
+          isLight ? 'text-stone-ink' : 'text-silver-300',
+          align === 'center' && 'mx-auto max-w-2xl',
+        ]}
+      >
+        {description}
+      </p>
+    )
+  }
+  <slot />
+</div>

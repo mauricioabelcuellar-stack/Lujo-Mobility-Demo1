@@ -1,0 +1,177 @@
+---
+// Header fijo: transparente sobre el hero y negro al hacer scroll. Dropdown de servicios por hover en desktop
+// y menú lateral (React) en mobile.
+import { Image, getImage } from 'astro:assets';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import content from '../content.json';
+import logo from '../assets/brand/logo-lujo-mobility.png';
+import { navItems, routes, serviceUrl, services, isActive } from '../lib/site.js';
+import Icon from './Icon.astro';
+import MobileMenu from './MobileMenu.jsx';
+
+const { navigation } = content;
+const pathname = Astro.url.pathname;
+const mobileLogo = await getImage({ src: logo, width: 240, format: 'webp' });
+
+const mobileServices = services.map((service) => ({
+  href: serviceUrl(service.slug),
+  nombre: service.nombre,
+  icono: service.icono,
+}));
+---
+
+<header data-header class="group fixed inset-x-0 top-0 z-50">
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 to-transparent transition-opacity duration-700 group-data-[scrolled]:opacity-0"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="pointer-events-none absolute inset-0 border-b border-white/10 bg-ink-950/95 opacity-0 backdrop-blur-md transition-opacity duration-700 group-data-[scrolled]:opacity-100"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div
+    class="container-lux relative flex h-20 items-center justify-between gap-6 transition-[height] duration-700 lg:h-24 lg:group-data-[scrolled]:h-20"
+  >
+    <a href={routes.inicio} class="shrink-0" aria-label={navigation.logoInicio}>
+      <Image
+        src={logo}
+        alt=""
+        widths={[140, 280]}
+        sizes="140px"
+        loading="eager"
+        class="h-auto w-[112px] lg:w-[140px]"
+      />
+    </a>
+
+    <nav aria-label={navigation.ariaPrincipal} class="hidden lg:block">
+      <ul class="flex items-center gap-7 xl:gap-10">
+        {
+          navItems.map((item) =>
+            item.key === 'servicios' ? (
+              <li class="relative" data-dropdown>
+                <a
+                  href={item.href}
+                  class:list={[
+                    'flex items-center gap-1.5 py-3 text-[0.95rem] tracking-wide transition-colors hover:text-white',
+                    isActive(item.href, pathname) ? 'text-white' : 'text-silver-200',
+                  ]}
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-controls="services-dropdown"
+                  aria-current={isActive(item.href, pathname) ? 'page' : undefined}
+                  data-dropdown-trigger
+                >
+                  {item.label}
+                  <ChevronDown size={15} strokeWidth={1.3} aria-hidden="true" />
+                </a>
+                <div id="services-dropdown" class="dropdown-panel absolute top-full left-1/2 w-[25rem] -translate-x-1/2 pt-4">
+                  <div class="border border-white/10 bg-ink-950/[0.98] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.9)] backdrop-blur-md">
+                    <ul aria-label={navigation.ariaSubmenuServicios} class="p-2">
+                      {services.map((service) => (
+                        <li>
+                          <a
+                            href={serviceUrl(service.slug)}
+                            class="group/item flex items-start gap-4 px-4 py-3.5 transition-colors hover:bg-white/[0.05] focus-visible:bg-white/[0.05]"
+                          >
+                            <Icon
+                              name={service.icono}
+                              size={20}
+                              class="mt-0.5 shrink-0 text-silver-300 transition-colors group-hover/item:text-white"
+                            />
+                            <span>
+                              <span class="block text-sm text-white">{service.nombre}</span>
+                              <span class="mt-1 block text-xs leading-relaxed text-silver-400">{service.resumen}</span>
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={item.href}
+                      class="link-arrow flex justify-between border-t border-white/10 px-6 py-4 text-[0.7rem] text-silver-200 hover:text-white"
+                    >
+                      {navigation.verTodosServicios}
+                      <ArrowRight size={14} strokeWidth={1.3} aria-hidden="true" />
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ) : (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={[
+                    'relative py-3 text-[0.95rem] tracking-wide transition-colors hover:text-white',
+                    isActive(item.href, pathname) ? 'text-white' : 'text-silver-200',
+                  ]}
+                  aria-current={isActive(item.href, pathname) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            )
+          )
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href={routes.contacto} class="btn btn-outline hidden min-h-11 py-2.5 text-sm xl:inline-flex">
+        {navigation.cta}
+        <ArrowRight size={16} strokeWidth={1.3} aria-hidden="true" />
+      </a>
+      <div class="lg:hidden">
+        <MobileMenu
+          client:media="(max-width: 1023.98px)"
+          items={navItems}
+          services={mobileServices}
+          currentPath={pathname}
+          logo={{ src: mobileLogo.src, width: 112, height: Math.round((112 * logo.height) / logo.width) }}
+          cta={{ label: navigation.cta, href: routes.contacto }}
+          labels={{
+            abrir: navigation.menuAbrir,
+            cerrar: navigation.menuCerrar,
+            titulo: navigation.menuTitulo,
+            descripcion: navigation.menuDescripcion,
+            nav: navigation.ariaPrincipal,
+            verTodos: navigation.verTodosServicios,
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Estado "scrolled" del header y accesibilidad del dropdown (aria-expanded y cierre con Escape).
+  const header = document.querySelector('[data-header]');
+  const updateHeader = () => header?.toggleAttribute('data-scrolled', window.scrollY > 40);
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  document.querySelectorAll('[data-dropdown]').forEach((dropdown) => {
+    const trigger = dropdown.querySelector('[data-dropdown-trigger]');
+    const setExpanded = (value) => trigger?.setAttribute('aria-expanded', String(value));
+
+    dropdown.addEventListener('mouseenter', () => setExpanded(true));
+    dropdown.addEventListener('mouseleave', () => {
+      setExpanded(false);
+      dropdown.removeAttribute('data-dismissed');
+    });
+    dropdown.addEventListener('focusin', () => setExpanded(!dropdown.hasAttribute('data-dismissed')));
+    dropdown.addEventListener('focusout', (event) => {
+      if (dropdown.contains(event.relatedTarget)) return;
+      setExpanded(false);
+      dropdown.removeAttribute('data-dismissed');
+    });
+    dropdown.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      dropdown.setAttribute('data-dismissed', '');
+      setExpanded(false);
+      trigger?.focus();
+    });
+  });
+</script>

@@ -1,0 +1,250 @@
+/* Estilos globales: tokens de diseño (Tailwind v4), base tipográfica y componentes reutilizables. */
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@theme {
+  --font-sans: 'Jost Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display Variable', ui-serif, Georgia, serif;
+
+  --color-ink-950: #050505;
+  --color-ink-900: #0b0b0c;
+  --color-ink-800: #131315;
+  --color-ink-700: #1c1c1f;
+  --color-ink-600: #2a2a2e;
+
+  --color-silver-50: #fafafa;
+  --color-silver-100: #f1f1f2;
+  --color-silver-200: #dededf;
+  --color-silver-300: #c2c2c7;
+  --color-silver-400: #a2a2a9;
+  --color-silver-500: #7b7b83;
+
+  --color-ivory: #f6f4f0;
+  --color-stone-ink: #55555c;
+
+  --ease-lux: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  --animate-accordion-down: accordion-down 0.4s var(--ease-lux);
+  --animate-accordion-up: accordion-up 0.3s var(--ease-lux);
+  --animate-sheet-in: sheet-in 0.55s var(--ease-lux);
+  --animate-sheet-out: sheet-out 0.35s var(--ease-lux);
+  --animate-fade-in: fade-in 0.45s var(--ease-lux);
+  --animate-fade-out: fade-out 0.35s var(--ease-lux);
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes sheet-in {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes sheet-out {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-silver-100 antialiased;
+    font-weight: 350;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-silver-200);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--color-silver-200);
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  .container-lux {
+    @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-14 xl:px-20;
+  }
+
+  .section {
+    @apply py-24 sm:py-28 lg:py-36;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.7rem] font-normal tracking-[0.42em] uppercase sm:text-xs;
+  }
+
+  .eyebrow-line {
+    @apply inline-flex items-center gap-4;
+  }
+  .eyebrow-line::before {
+    content: '';
+    @apply h-px w-10 bg-current opacity-50;
+  }
+
+  .heading-xl {
+    @apply text-[2.4rem] leading-[1.05] sm:text-5xl lg:text-6xl;
+  }
+
+  .heading-lg {
+    @apply text-[2rem] leading-[1.1] sm:text-4xl lg:text-5xl;
+  }
+
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-4 px-7 py-3.5 text-[0.95rem] tracking-wide transition-colors duration-500 sm:px-9 sm:py-4;
+    transition-timing-function: var(--ease-lux);
+  }
+  .btn svg {
+    @apply shrink-0 transition-transform duration-500;
+    transition-timing-function: var(--ease-lux);
+  }
+  .btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  .btn-outline {
+    @apply border border-white/70 text-white hover:border-white hover:bg-white hover:text-ink-950;
+  }
+  .btn-light {
+    @apply bg-white text-ink-950 hover:bg-silver-200;
+  }
+  .btn-dark {
+    @apply bg-ink-950 text-white hover:bg-ink-700;
+  }
+  .btn-outline-dark {
+    @apply border border-ink-950/70 text-ink-950 hover:bg-ink-950 hover:text-white;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-3 text-sm tracking-[0.18em] uppercase;
+  }
+  .link-arrow svg {
+    @apply transition-transform duration-500;
+  }
+  .link-arrow:hover svg,
+  .group:hover .link-arrow svg {
+    transform: translateX(5px);
+  }
+
+  .silver-text {
+    background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 45%, #8d8d94 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+  }
+
+  .skip-link {
+    @apply fixed top-3 left-3 z-[100] -translate-y-24 bg-white px-4 py-2 text-sm text-ink-950 transition-transform focus:translate-y-0;
+  }
+
+  /* Tarjeta de servicio compartida entre ServiceCard.astro y ServiceCarousel.jsx */
+  .service-tile {
+    @apply relative isolate flex h-[26rem] flex-col justify-between overflow-hidden border border-white/10 bg-ink-900 p-7 text-white transition-colors duration-700 sm:h-[28rem] lg:p-8;
+  }
+  .service-tile:hover,
+  .service-tile:focus-visible {
+    @apply border-white/40;
+  }
+  .service-tile__image {
+    @apply absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-[1600ms];
+    transition-timing-function: var(--ease-lux);
+  }
+  .service-tile:hover .service-tile__image {
+    transform: scale(1.05);
+  }
+  .service-tile__shade {
+    @apply absolute inset-0 -z-10 bg-gradient-to-t from-black via-black/60 to-black/50;
+  }
+}
+
+/* Dropdown de servicios del header: se abre con hover (desktop) y con foco de teclado. */
+.dropdown-panel {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity 0.35s var(--ease-lux),
+    transform 0.35s var(--ease-lux),
+    visibility 0s linear 0.35s;
+}
+[data-dropdown]:hover .dropdown-panel,
+[data-dropdown]:focus-within .dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+[data-dropdown][data-dismissed] .dropdown-panel {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Estado inicial de las animaciones de GSAP. Solo aplica si JS y "motion" están disponibles. */
+.motion-ok [data-reveal],
+.motion-ok [data-reveal-stagger] > *,
+.motion-ok [data-hero-item] {
+  opacity: 0;
+}
+
+/* Indicador de scroll del hero */
+.scroll-line {
+  @apply relative block h-px w-16 overflow-hidden bg-white/25;
+}
+.scroll-line::after {
+  content: '';
+  @apply absolute inset-y-0 left-0 w-1/2 bg-white;
+  animation: scroll-line 3.2s var(--ease-lux) infinite;
+}
+@keyframes scroll-line {
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(200%); }
+}
+
+/* Halo sutil del botón flotante de WhatsApp */
+.wa-halo {
+  animation: wa-halo 3.6s ease-out infinite;
+}
+@keyframes wa-halo {
+  0% { transform: scale(1); opacity: 0.35; }
+  70%, 100% { transform: scale(1.55); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-line::after,
+  .wa-halo {
+    animation: none;
+  }
+  .service-tile__image {
+    transition: none;
+  }
+}
