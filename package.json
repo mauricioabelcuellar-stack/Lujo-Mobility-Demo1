@@ -10,7 +10,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "assets:brand": "node scripts/brand-assets.mjs",
-    "assets:images": "node scripts/fetch-stock-images.mjs"
+    "assets:images": "node scripts/fetch-stock-images.mjs",
+    "watermarks:check": "node scripts/clean-watermarks.mjs",
+    "watermarks:clean": "node scripts/clean-watermarks.mjs --write"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",

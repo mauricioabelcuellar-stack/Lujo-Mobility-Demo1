@@ -24,7 +24,6 @@ const jsonLd = {
   name: site.nombre,
   description: site.descripcion,
   url: siteUrl,
-  telephone: site.telefono,
   email: site.email,
   image: new URL('/og-image.jpg', siteUrl).href,
   address: { '@type': 'PostalAddress', addressLocality: site.areaServicio[0], addressCountry: site.pais },
@@ -113,25 +112,27 @@ const jsonLd = {
 
   <ClientLogos />
 
-  <section class="section bg-ink-950" aria-labelledby="testimonios-titulo">
-    <div class="container-lux">
-      <SectionHeading id="testimonios-titulo" eyebrow={testimonios.eyebrow} title={testimonios.titulo} />
-      <div class="mt-14 lg:mt-20" data-reveal>
-        <TestimonialsCarousel
-          client:visible
-          items={testimonios.items}
-          labels={{
-            region: testimonios.titulo,
-            anterior: ui.anterior,
-            siguiente: ui.siguiente,
-            irA: ui.irADiapositiva,
-            estrellas: ui.estrellas,
-          }}
-        />
+  {testimonios.items.length > 0 && (
+    <section class="section bg-ink-950" aria-labelledby="testimonios-titulo">
+      <div class="container-lux">
+        <SectionHeading id="testimonios-titulo" eyebrow={testimonios.eyebrow} title={testimonios.titulo} />
+        <div class="mt-14 lg:mt-20" data-reveal>
+          <TestimonialsCarousel
+            client:visible
+            items={testimonios.items}
+            labels={{
+              region: testimonios.titulo,
+              anterior: ui.anterior,
+              siguiente: ui.siguiente,
+              irA: ui.irADiapositiva,
+              estrellas: ui.estrellas,
+            }}
+          />
+        </div>
+        {testimonios.nota && <p class="mt-8 text-xs text-silver-500">{testimonios.nota}</p>}
       </div>
-      <p class="mt-8 text-xs text-silver-500">{testimonios.nota}</p>
-    </div>
-  </section>
+    </section>
+  )}
 
   <section class="section bg-ivory text-ink-950" aria-labelledby="proceso-titulo">
     <div class="container-lux">

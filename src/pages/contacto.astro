@@ -1,16 +1,15 @@
 ---
 // Página Contacto: canales de atención y CTA a WhatsApp. Sin formulario (se resolverá por separado).
-import { Check, Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { Check, Clock, Mail, MapPin } from 'lucide-react';
 import content from '../content.json';
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import BrandIcon from '../components/BrandIcon.astro';
-import { emailUrl, phoneUrl, routes, whatsappUrl } from '../lib/site.js';
+import { emailUrl, routes, whatsappUrl } from '../lib/site.js';
 
 const { contacto, site, seo, navigation, ui } = content;
 
 const channels = [
-  { label: contacto.telefonoLabel, value: site.telefono, href: phoneUrl, icon: Phone },
   { label: contacto.whatsappLabel, value: site.whatsappVisible, href: whatsappUrl(), brand: 'whatsapp', external: true },
   { label: contacto.emailLabel, value: site.email, href: emailUrl, icon: Mail },
   { label: contacto.horarioLabel, value: site.horario, icon: Clock },

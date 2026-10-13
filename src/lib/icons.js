@@ -19,6 +19,8 @@ import {
   ShieldCheck,
   Star,
   UserRound,
+  UsersRound,
+  PartyPopper,
   Zap,
 } from 'lucide-react';
 
@@ -41,5 +43,7 @@ export const icons = {
   ShieldCheck,
   Star,
   UserRound,
+  UsersRound,
+  PartyPopper,
   Zap,
 };

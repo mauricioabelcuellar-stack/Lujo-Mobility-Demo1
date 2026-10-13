@@ -23,8 +23,6 @@ export const serviceUrl = (slug) => `${routes.servicios}${slug}/`;
 export const whatsappUrl = (message = content.site.whatsappMensaje) =>
   `https://wa.me/${content.site.whatsapp}?text=${encodeURIComponent(message)}`;
 
-export const phoneUrl = `tel:${content.site.telefono.replace(/[^\d+]/g, '')}`;
-
 export const emailUrl = `mailto:${content.site.email}`;
 
 export const isActive = (href, pathname) =>

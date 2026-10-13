@@ -1,20 +1,17 @@
 {
-  "_nota": "Contenido de demostración. Teléfono, email, WhatsApp, URL del sitio, testimonios, logos de empresas y modelos de la flota son placeholders que el cliente debe reemplazar.",
-
   "site": {
     "nombre": "Lujo Mobility",
-    "eslogan": "La confianza nos mueve",
-    "descripcion": "Transporte ejecutivo y corporativo en Lima, Perú. Traslados al aeropuerto, chofer a disposición y servicios VIP con conductores profesionales y vehículos premium.",
+    "eslogan": "Movilidad privada, segura y a tu medida",
+    "descripcion": "Servicio de transporte privado y ejecutivo en Lima Metropolitana y Callao, con atención personalizada para clientes particulares y corporativos.",
     "url": "https://www.lujomobility.pe",
     "ciudad": "Lima, Perú",
     "areaServicio": ["Lima", "Callao"],
     "pais": "PE",
-    "telefono": "+51 900 000 000",
-    "email": "reservas@lujomobility.pe",
-    "whatsapp": "51900000000",
-    "whatsappVisible": "+51 900 000 000",
+    "email": "ltapiaregner@gmail.com",
+    "whatsapp": "51962886425",
+    "whatsappVisible": "+51 962 886 425",
     "horario": "24 horas, los 7 días de la semana",
-    "whatsappMensaje": "Hola, quisiera solicitar un traslado con Lujo Mobility."
+    "whatsappMensaje": "Hola, quisiera solicitar una cotización para un servicio de transporte con Lujo Mobility."
   },
 
   "navigation": {
@@ -61,14 +58,14 @@
       "total": "03",
       "label": "Desplázate para conocer más"
     },
-    "confidenceText": "La confianza nos mueve",
+    "confidenceText": "Movilidad privada, segura y a tu medida",
 
     "intro": {
       "eyebrow": "Lujo Mobility",
-      "titulo": "Movilidad ejecutiva a la altura de cada destino",
+      "titulo": "Movilidad privada para cada ocasión",
       "parrafos": [
-        "Acompañamos a empresas, ejecutivos y visitantes en sus traslados por Lima con un servicio discreto, puntual y cuidado en cada detalle.",
-        "Cada viaje se planifica con anticipación: conocemos tu agenda, confirmamos cada horario y asignamos un chofer profesional que entiende lo que significa tu tiempo."
+        "LU ◆ JO Mobility ofrece transporte privado y ejecutivo en Lima Metropolitana y Callao para clientes particulares y corporativos.",
+        "Atendemos a empresarios, altos ejecutivos, directivos, personalidades públicas, artistas, cantantes y celebridades nacionales e internacionales, además de clientes particulares que valoran la exclusividad, la privacidad, la seguridad y el confort."
       ],
       "cta": "Conoce quiénes somos",
       "imagen": "interior-ejecutivo.jpg",
@@ -78,14 +75,14 @@
     "servicios": {
       "eyebrow": "Servicios",
       "titulo": "Un servicio para cada agenda",
-      "descripcion": "Desde un recojo en el aeropuerto hasta la coordinación completa de una delegación internacional.",
+      "descripcion": "Traslados al aeropuerto, movilidad corporativa, transporte para grupos, servicio por horas y opciones de seguridad y protección.",
       "cta": "Ver todos los servicios"
     },
 
     "flota": {
       "eyebrow": "Flota",
-      "titulo": "Vehículos pensados para viajar con calma",
-      "descripcion": "Sedanes, SUV y vans ejecutivas en óptimas condiciones, limpias y preparadas antes de cada servicio.",
+      "titulo": "Un vehículo para cada necesidad",
+      "descripcion": "Desde sedanes discretos y vehículos ejecutivos hasta SUV de alta gama, minivanes y buses para grupos.",
       "cta": "Conocer la flota",
       "imagen": "flota-sedan.jpg",
       "imagenAlt": "Silueta de un sedán negro iluminado por una luz lateral sobre fondo oscuro"
@@ -106,51 +103,51 @@
       {
         "icono": "ShieldCheck",
         "titulo": "Seguridad",
-        "descripcion": "Choferes seleccionados, vehículos revisados y rutas planificadas con criterio."
+        "descripcion": "Contamos con los seguros, licencias y autorizaciones necesarias para prestar nuestros servicios."
       },
       {
         "icono": "Clock",
         "titulo": "Puntualidad",
-        "descripcion": "Llegamos antes de la hora pactada y monitoreamos el tráfico y los vuelos."
+        "descripcion": "Coordinamos los traslados con puntualidad y atención a los horarios acordados."
       },
       {
         "icono": "Lock",
         "titulo": "Discreción",
-        "descripcion": "Tus conversaciones, agenda y destinos se mantienen en absoluta reserva."
+        "descripcion": "La discreción es parte de la atención en cada traslado."
       },
       {
         "icono": "Headset",
         "titulo": "Atención personalizada",
-        "descripcion": "Un solo punto de contacto que coordina cada detalle contigo o tu equipo."
+        "descripcion": "Atención personalizada de acuerdo con tus necesidades y las de tu equipo."
       }
     ]
   },
 
   "nosotros": {
     "eyebrow": "Nosotros",
-    "titulo": "Movilidad ejecutiva con sello propio",
-    "descripcion": "Una empresa limeña dedicada al transporte ejecutivo, construida sobre tres ideas: seguridad, puntualidad y trato humano.",
+    "titulo": "Movilidad privada y ejecutiva en Lima",
+    "descripcion": "LU ◆ JO Mobility ofrece soluciones personalizadas de transporte privado y ejecutivo en Lima Metropolitana y Callao.",
     "imagen": "nosotros-chofer.jpg",
     "imagenAlt": "Vista desde el asiento trasero de un chofer conduciendo de noche por la ciudad",
     "historia": {
       "eyebrow": "Quiénes somos",
-      "titulo": "Viajar tranquilo también es parte de la agenda",
+      "titulo": "Un servicio adaptado a cada cliente",
       "parrafos": [
-        "Lujo Mobility nace para responder a una necesidad concreta de empresas y ejecutivos en Lima: moverse por la ciudad con la certeza de que cada traslado saldrá según lo previsto.",
-        "Trabajamos con choferes profesionales, vehículos ejecutivos y una coordinación cercana que se anticipa a los imprevistos. Nuestro objetivo es simple: que tu única preocupación sea llegar.",
-        "Atendemos traslados corporativos, recojos en aeropuerto, jornadas con chofer a disposición y la llegada de visitantes internacionales que necesitan una bienvenida a la altura."
+        "Contamos con experiencia en el sector del transporte privado y ejecutivo. Atendemos Lima Metropolitana y Callao con soluciones de movilidad personalizadas para clientes particulares y corporativos.",
+        "Nuestra flota versátil incluye sedanes discretos y confortables, vehículos ejecutivos, SUV de alta gama, minivanes y buses para traslados grupales. Asignamos el vehículo de acuerdo con cada ocasión.",
+        "Brindamos traslados al aeropuerto, transporte corporativo y para grupos, vehículos con chofer por horas, transporte con seguridad especializada, vehículos blindados y movilidad para eventos."
       ],
       "imagen": "servicio-chofer.jpg",
       "imagenAlt": "Chofer abriendo la puerta de un vehículo negro de noche"
     },
     "compromiso": {
       "eyebrow": "Nuestro compromiso",
-      "titulo": "Cada traslado se prepara antes de empezar",
+      "titulo": "Seguridad y atención en cada traslado",
       "items": [
-        "Confirmación del servicio con datos del chofer y del vehículo.",
-        "Contacto previo del chofer para acordar el punto de encuentro.",
-        "Vehículos limpios, revisados y listos antes de cada viaje.",
-        "Comunicación directa ante cualquier cambio de horario."
+        "Contamos con los seguros, licencias y autorizaciones necesarias.",
+        "Coordinamos cada servicio de forma personalizada por WhatsApp.",
+        "Ofrecemos vehículos de acuerdo con el tipo de traslado y las necesidades del cliente.",
+        "La puntualidad, la discreción, la seguridad y la atención personalizada son prioridades."
       ]
     }
   },
@@ -158,20 +155,20 @@
   "servicios": {
     "eyebrow": "Servicios",
     "titulo": "Soluciones de movilidad para cada necesidad",
-    "descripcion": "Servicios de transporte ejecutivo en Lima y alrededores, pensados para empresas, ejecutivos y visitantes que necesitan puntualidad, seguridad y reserva.",
+    "descripcion": "Transporte privado y ejecutivo en Lima Metropolitana y Callao, para clientes particulares, corporativos y personas que requieren privacidad, seguridad y confort.",
     "imagen": "aeropuerto-terminal.jpg",
     "imagenAlt": "Vista nocturna de un aeropuerto internacional con aviones estacionados frente a la terminal",
-    "introTitulo": "Siete formas de moverte con tranquilidad",
-    "introTexto": "Cada servicio puede adaptarse a tu agenda. Si no encuentras exactamente lo que necesitas, escríbenos y lo coordinamos contigo.",
+    "introTitulo": "Soluciones de movilidad a tu medida",
+    "introTexto": "Cuéntanos qué tipo de traslado necesitas y coordinaremos una opción adecuada para tu agenda y el tamaño de tu grupo.",
     "incluyeTitulo": "Qué incluye",
     "detalleEyebrow": "Servicio",
     "ctaTitulo": "¿Coordinamos tu traslado?",
-    "ctaDescripcion": "Cuéntanos fecha, horario y destino. Te confirmamos disponibilidad por WhatsApp.",
+    "ctaDescripcion": "Envíanos los detalles de tu traslado por WhatsApp y te enviaremos una cotización. Las tarifas se informan a pedido.",
     "ctaWhatsapp": "Solicitar por WhatsApp",
     "ctaContacto": "Ver datos de contacto",
     "relacionadosEyebrow": "Otros servicios",
     "relacionadosTitulo": "También puedes consultar",
-    "whatsappMensaje": "Hola, me interesa el servicio \"{servicio}\". ¿Me podrían dar más información?",
+    "whatsappMensaje": "Hola, me interesa cotizar el servicio \"{servicio}\". ¿Me podrían informar disponibilidad y tarifa?",
     "items": [
       {
         "slug": "traslado-aeropuerto",
@@ -179,16 +176,16 @@
         "numero": "01",
         "nombre": "Traslado aeropuerto",
         "resumen": "Recojos y traslados desde y hacia el aeropuerto",
-        "descripcion": "Recojo en sala de arribos y traslados hacia y desde el Aeropuerto Internacional Jorge Chávez, con seguimiento de tu vuelo.",
+        "descripcion": "Recojo y traslado de pasajeros desde y hacia el aeropuerto, con puntualidad y comodidad.",
         "descripcionLarga": [
-          "Te esperamos en la sala de arribos con un cartel personalizado y monitoreamos tu vuelo para ajustar el recojo ante cualquier adelanto o retraso.",
-          "El chofer te asiste con el equipaje y te lleva de forma directa a tu hotel, oficina o domicilio. Para los traslados de salida, calculamos la hora de recojo considerando el tráfico de Lima y los tiempos recomendados por la aerolínea."
+          "Coordinamos el recojo y el traslado según los detalles que nos compartas al solicitar el servicio.",
+          "Indícanos fecha, hora, origen, destino y número de pasajeros para recibir una cotización personalizada."
         ],
         "incluye": [
-          "Seguimiento del vuelo",
-          "Recepción con cartel personalizado",
-          "Asistencia con el equipaje",
-          "Tiempo de espera de cortesía"
+          "Recojo y traslado de pasajeros",
+          "Coordinación previa del servicio",
+          "Atención puntual y cómoda",
+          "Cotización a pedido"
         ],
         "imagen": "servicio-aeropuerto.jpg",
         "imagenAlt": "Terminal de aeropuerto iluminada de noche con la calzada mojada"
@@ -198,17 +195,17 @@
         "icono": "BriefcaseBusiness",
         "numero": "02",
         "nombre": "Traslado corporativo",
-        "resumen": "Movilidad para ejecutivos y equipos de trabajo",
-        "descripcion": "Traslados puntuales para reuniones, visitas a clientes y agendas ejecutivas, con coordinación centralizada para tu empresa.",
+        "resumen": "Movilidad privada para empresarios y profesionales",
+        "descripcion": "Transporte corporativo y ejecutivo para empresarios, gerentes, directivos y profesionales.",
         "descripcionLarga": [
-          "Nos integramos a la dinámica de tu empresa para que los traslados de tus ejecutivos, directores e invitados funcionen sin fricciones.",
-          "Coordinamos directamente con asistentes y áreas de administración, programamos servicios recurrentes y mantenemos un único punto de contacto para cada solicitud."
+          "Coordinamos traslados para agendas de trabajo y necesidades de movilidad de clientes corporativos.",
+          "El servicio se adapta a cada solicitud. Escríbenos por WhatsApp con los detalles para recibir una cotización."
         ],
         "incluye": [
-          "Programación de traslados recurrentes",
-          "Coordinación con asistentes y administración",
-          "Choferes con presencia ejecutiva",
-          "Un único punto de contacto"
+          "Transporte para empresarios y ejecutivos",
+          "Atención personalizada",
+          "Coordinación por WhatsApp",
+          "Cotización a pedido"
         ],
         "imagen": "servicio-corporativo.jpg",
         "imagenAlt": "Sedán negro de lujo estacionado en una calle mojada de noche"
@@ -217,18 +214,18 @@
         "slug": "chofer-a-disposicion",
         "icono": "UserRound",
         "numero": "03",
-        "nombre": "Chofer a disposición",
-        "resumen": "Un chofer dedicado por horas o jornada completa",
-        "descripcion": "Un chofer profesional y un vehículo ejecutivo dedicados a tu agenda, por horas o por jornada completa.",
+        "nombre": "Vehículo con chofer por horas",
+        "resumen": "Un vehículo con chofer a disposición durante el tiempo que necesites",
+        "descripcion": "Vehículos con chofer a disposición del cliente por el tiempo que necesite.",
         "descripcionLarga": [
-          "Ideal para días con varias reuniones, recorridos por distintos distritos o agendas que cambian sobre la marcha. El chofer permanece disponible y se adapta a tus tiempos.",
-          "Tú decides el recorrido; nosotros nos ocupamos del tráfico, el estacionamiento y los tiempos de espera."
+          "Solicita un vehículo con chofer para acompañarte durante tu agenda.",
+          "Indícanos por WhatsApp el tiempo estimado, la fecha y los recorridos para coordinar el servicio y su cotización."
         ],
         "incluye": [
-          "Servicio por horas o jornada completa",
-          "Chofer dedicado durante todo el servicio",
-          "Recorridos flexibles según tu agenda",
-          "Espera en cada punto de la ruta"
+          "Servicio a disposición por el tiempo solicitado",
+          "Coordinación de recorridos",
+          "Atención personalizada",
+          "Cotización según el servicio requerido"
         ],
         "imagen": "servicio-chofer.jpg",
         "imagenAlt": "Chofer abriendo la puerta de un vehículo negro de noche"
@@ -237,134 +234,134 @@
         "slug": "traslado-con-escolta",
         "icono": "ShieldCheck",
         "numero": "04",
-        "nombre": "Traslado con escolta privada",
-        "resumen": "Protección coordinada para trayectos sensibles",
-        "descripcion": "Traslados con acompañamiento de seguridad privada para ejecutivos, autoridades y visitantes que requieren un nivel adicional de protección.",
+        "nombre": "Transporte con seguridad especializada",
+        "resumen": "Movilidad privada con conductores capacitados y personal de protección",
+        "descripcion": "Servicio de movilidad privada con conductores capacitados y personal de protección, para quienes requieren seguridad, discreción y tranquilidad adicionales.",
         "descripcionLarga": [
-          "Planificamos cada trayecto junto con personal de seguridad especializado: rutas principales y alternativas, puntos de encuentro y protocolos de comunicación.",
-          "El servicio se diseña caso por caso, según el perfil del pasajero y las características del recorrido, siempre con la máxima reserva."
+          "Coordinamos un servicio personalizado para clientes que requieren un nivel adicional de seguridad y discreción.",
+          "La solicitud se evalúa según las necesidades del cliente y los detalles del traslado. Consulta disponibilidad y cotización por WhatsApp."
         ],
         "incluye": [
-          "Planificación previa de rutas",
-          "Coordinación con personal de seguridad",
-          "Protocolos de comunicación definidos",
-          "Confidencialidad total del servicio"
+          "Conductores capacitados",
+          "Personal de protección",
+          "Atención discreta",
+          "Coordinación personalizada"
         ],
         "imagen": "servicio-escolta.jpg",
         "imagenAlt": "SUV negra iluminada en un espacio oscuro"
       },
       {
-        "slug": "transporte-equipos-eventos",
-        "icono": "Package",
+        "slug": "transporte-blindado",
+        "icono": "ShieldCheck",
         "numero": "05",
-        "nombre": "Transporte para equipos y eventos",
-        "resumen": "Logística de pasajeros y equipaje para eventos",
-        "descripcion": "Movilidad para congresos, lanzamientos, rodajes y eventos corporativos, incluyendo el traslado de equipos y equipaje.",
+        "nombre": "Transporte en vehículos blindados",
+        "resumen": "Traslados con medidas de protección adicionales",
+        "descripcion": "Traslados en vehículos blindados para clientes que requieren medidas de protección adicionales.",
         "descripcionLarga": [
-          "Coordinamos la llegada y salida de invitados, ponentes y equipos de trabajo para que tu evento empiece y termine a tiempo.",
-          "Organizamos horarios escalonados, puntos de embarque y vehículos con capacidad para equipaje o equipos de producción."
+          "Consulta la disponibilidad de vehículos blindados para el traslado que necesitas.",
+          "Coordinamos los detalles del servicio y la cotización directamente por WhatsApp."
         ],
         "incluye": [
-          "Planificación de horarios y rutas",
-          "Vehículos para pasajeros y equipaje",
-          "Coordinador de servicio a solicitud",
-          "Atención a invitados y ponentes"
+          "Vehículos blindados",
+          "Coordinación previa del traslado",
+          "Atención personalizada",
+          "Cotización a pedido"
+        ],
+        "imagen": "servicio-escolta.jpg",
+        "imagenAlt": "SUV oscura para un traslado privado"
+      },
+      {
+        "slug": "transporte-grupos",
+        "icono": "UsersRound",
+        "numero": "06",
+        "nombre": "Transporte para grupos",
+        "resumen": "Traslados grupales en minivanes, vans y buses",
+        "descripcion": "Movilidad para grupos en minivanes, vans y buses, de acuerdo con las necesidades de cada traslado.",
+        "descripcionLarga": [
+          "Contamos con alternativas para traslados grupales y coordinamos el tipo de vehículo según el número de pasajeros y el servicio solicitado.",
+          "Comparte por WhatsApp la fecha, la ruta y el tamaño del grupo para solicitar una cotización."
+        ],
+        "incluye": [
+          "Minivanes, vans y buses",
+          "Coordinación de grupos",
+          "Vehículo según la necesidad del traslado",
+          "Cotización a pedido"
+        ],
+        "imagen": "flota-van.jpg",
+        "imagenAlt": "Van ejecutiva para traslados grupales"
+      },
+      {
+        "slug": "transporte-eventos",
+        "icono": "PartyPopper",
+        "numero": "07",
+        "nombre": "Transporte para eventos",
+        "resumen": "Movilidad para reuniones, congresos y celebraciones",
+        "descripcion": "Transporte para reuniones empresariales, congresos, celebraciones y eventos privados.",
+        "descripcionLarga": [
+          "Coordinamos la movilidad de acuerdo con el tipo de evento y las necesidades de sus asistentes.",
+          "Escríbenos por WhatsApp con la fecha, el lugar y el número estimado de pasajeros para recibir una cotización."
+        ],
+        "incluye": [
+          "Reuniones empresariales y congresos",
+          "Celebraciones y eventos privados",
+          "Coordinación según el evento",
+          "Cotización a pedido"
         ],
         "imagen": "servicio-eventos.jpg",
-        "imagenAlt": "Escenario de un evento iluminado con haces de luz en blanco y negro"
-      },
-      {
-        "slug": "viajes-larga-distancia",
-        "icono": "Route",
-        "numero": "06",
-        "nombre": "Viajes de larga distancia",
-        "resumen": "Trayectos interprovinciales con total comodidad",
-        "descripcion": "Viajes interprovinciales desde Lima hacia destinos como Paracas, Ica o Huacho, con la misma comodidad de un traslado urbano.",
-        "descripcionLarga": [
-          "Para visitas a operaciones, plantas o destinos de descanso, planificamos el viaje completo: horarios de salida, paradas y tiempos estimados de llegada.",
-          "Viajas en un vehículo ejecutivo, con un chofer experimentado en carretera y comunicación durante todo el trayecto."
-        ],
-        "incluye": [
-          "Planificación de ruta y paradas",
-          "Choferes con experiencia en carretera",
-          "Servicio de ida, vuelta o con espera",
-          "Comunicación durante el viaje"
-        ],
-        "imagen": "servicio-larga-distancia.jpg",
-        "imagenAlt": "Carretera que se pierde hacia las montañas bajo un cielo nublado al atardecer"
-      },
-      {
-        "slug": "vip-visitas-internacionales",
-        "icono": "Globe",
-        "numero": "07",
-        "nombre": "Servicio VIP para visitas internacionales",
-        "resumen": "Atención integral para delegaciones y visitantes",
-        "descripcion": "Recepción y movilidad para visitantes extranjeros y delegaciones, con choferes que se comunican en inglés.",
-        "descripcionLarga": [
-          "Recibimos a tus invitados desde su llegada al país y los acompañamos durante toda su estadía: aeropuerto, hotel, reuniones y actividades.",
-          "Asignamos choferes que se comunican en inglés y mantenemos a tu equipo informado de cada movimiento para que la visita transcurra sin contratiempos."
-        ],
-        "incluye": [
-          "Recepción personalizada en el aeropuerto",
-          "Choferes que se comunican en inglés",
-          "Itinerario coordinado durante la estadía",
-          "Reportes de cada traslado a tu equipo"
-        ],
-        "imagen": "servicio-vip.jpg",
-        "imagenAlt": "Jet privado oscuro estacionado en una pista mojada"
+        "imagenAlt": "Escenario iluminado para un evento privado"
       }
     ]
   },
 
   "flota": {
     "eyebrow": "Flota",
-    "titulo": "Vehículos a la altura de cada traslado",
-    "descripcion": "Unidades ejecutivas preparadas para ofrecer comodidad, silencio y seguridad en cada kilómetro.",
+    "titulo": "Una flota versátil para cada ocasión",
+    "descripcion": "Sedanes discretos y confortables, vehículos ejecutivos, SUV de alta gama, minivanes y buses para traslados grupales.",
     "imagen": "detalle-ventana.jpg",
     "imagenAlt": "Detalle en blanco y negro de la ventana lateral de un auto en la oscuridad",
     "introTitulo": "Elige el vehículo según tu traslado",
-    "introTexto": "Cada unidad se asigna según el número de pasajeros, el equipaje y el tipo de servicio. Todas se limpian y revisan antes de cada viaje.",
-    "nota": "Imágenes y modelos referenciales. La unidad asignada se confirma al momento de la reserva.",
+    "introTexto": "Coordinamos el vehículo más adecuado para cada ocasión y necesidad. Consulta disponibilidad y detalles al solicitar tu cotización por WhatsApp.",
+    "nota": "La disponibilidad, capacidad y características del vehículo se confirman al solicitar la cotización.",
     "items": [
       {
-        "nombre": "SUV Ejecutiva",
-        "modelo": "Modelo referencial",
-        "categoria": "Ejecutiva",
-        "capacidad": "Hasta 4 pasajeros",
-        "equipaje": "3 maletas",
-        "caracteristicas": ["Lunas polarizadas", "Climatización independiente", "Agua y cargadores a bordo"],
-        "imagen": "flota-suv-ejecutiva.jpg",
-        "imagenAlt": "SUV negra estacionada en una carretera al atardecer"
+        "nombre": "Sedán discreto",
+        "modelo": "Consultar disponibilidad",
+        "categoria": "Discreto y confortable",
+        "capacidad": "Consultar al cotizar",
+        "equipaje": "Consultar al cotizar",
+        "caracteristicas": ["Diseño discreto", "Confort para traslados privados", "Ideal para pasar desapercibido"],
+        "imagen": "flota-sedan.jpg",
+        "imagenAlt": "Sedán oscuro para traslados privados"
       },
       {
-        "nombre": "Sedán Premium",
-        "modelo": "Modelo referencial",
-        "categoria": "Premium",
-        "capacidad": "Hasta 3 pasajeros",
-        "equipaje": "2 maletas",
-        "caracteristicas": ["Cabina silenciosa", "Asientos de cuero", "Ideal para agendas ejecutivas"],
-        "imagen": "flota-sedan.jpg",
-        "imagenAlt": "Sedán negro iluminado lateralmente sobre fondo oscuro"
+        "nombre": "Vehículo ejecutivo",
+        "modelo": "Consultar disponibilidad",
+        "categoria": "Ejecutivo",
+        "capacidad": "Consultar al cotizar",
+        "equipaje": "Consultar al cotizar",
+        "caracteristicas": ["Para transporte ejecutivo", "Atención personalizada", "Comodidad durante el trayecto"],
+        "imagen": "flota-suv-ejecutiva.jpg",
+        "imagenAlt": "Vehículo ejecutivo oscuro estacionado al atardecer"
       },
       {
         "nombre": "SUV Premium",
-        "modelo": "Modelo referencial",
+        "modelo": "Consultar disponibilidad",
         "categoria": "Premium",
-        "capacidad": "Hasta 4 pasajeros",
-        "equipaje": "4 maletas",
-        "caracteristicas": ["Mayor espacio interior", "Lunas polarizadas", "Cargadores USB para cada pasajero"],
+        "capacidad": "Consultar al cotizar",
+        "equipaje": "Consultar al cotizar",
+        "caracteristicas": ["SUV de alta gama", "Comodidad y discreción", "Disponibilidad a consultar"],
         "imagen": "flota-suv-premium.jpg",
         "imagenAlt": "SUV negra estacionada frente a un edificio de fachada moderna"
       },
       {
-        "nombre": "Van Ejecutiva",
-        "modelo": "Modelo referencial",
-        "categoria": "Grupos",
-        "capacidad": "Hasta 7 pasajeros",
-        "equipaje": "6 maletas",
-        "caracteristicas": ["Ideal para grupos y delegaciones", "Amplio espacio para equipaje", "Configuración ejecutiva de asientos"],
+        "nombre": "Minivanes y buses",
+        "modelo": "Consultar disponibilidad",
+        "categoria": "Traslados grupales",
+        "capacidad": "Consultar al cotizar",
+        "equipaje": "Consultar al cotizar",
+        "caracteristicas": ["Para traslados grupales", "Alternativas según el tamaño del grupo", "Minivanes, vans y buses"],
         "imagen": "flota-van.jpg",
-        "imagenAlt": "Van ejecutiva oscura con los faros encendidos al anochecer"
+        "imagenAlt": "Van oscura para traslados grupales"
       }
     ]
   },
@@ -372,41 +369,29 @@
   "comoFunciona": {
     "eyebrow": "Cómo funciona",
     "titulo": "Un proceso claro, de principio a fin",
-    "descripcion": "Desde la solicitud hasta la llegada, cada etapa está pensada para que no tengas que preocuparte por nada.",
+    "descripcion": "Solicita tu servicio por WhatsApp y recibe una cotización personalizada antes de confirmar.",
     "imagen": "trayecto-noche.jpg",
     "imagenAlt": "Vista desde el interior de un auto del tráfico nocturno a través del parabrisas con lluvia",
-    "introTitulo": "Cinco pasos, ninguna sorpresa",
-    "introTexto": "Te mantenemos informado en cada momento. Sabrás quién te recoge, en qué vehículo y a qué hora, antes de que empiece el viaje.",
+    "introTitulo": "Coordinar tu traslado es sencillo",
+    "introTexto": "La reserva se gestiona por WhatsApp. Antes de confirmar, coordinaremos contigo la disponibilidad y la cotización.",
     "pasos": [
       {
         "numero": "01",
         "icono": "MessageCircle",
         "titulo": "Reserva",
-        "descripcion": "Solicita tu traslado por WhatsApp, teléfono o correo indicando fecha, horario, origen, destino y número de pasajeros."
+        "descripcion": "Escríbenos por WhatsApp e indica fecha, horario, origen, destino, número de pasajeros y el tipo de servicio que necesitas."
       },
       {
         "numero": "02",
         "icono": "CalendarCheck",
-        "titulo": "Confirmación de chofer y vehículo",
-        "descripcion": "Te confirmamos el servicio con el nombre del chofer asignado, el vehículo y su placa."
+        "titulo": "Cotización y disponibilidad",
+        "descripcion": "Revisamos los detalles de tu solicitud y te informamos la cotización y disponibilidad del servicio."
       },
       {
         "numero": "03",
-        "icono": "PhoneCall",
-        "titulo": "Contacto previo del chofer",
-        "descripcion": "Antes del viaje, el chofer se comunica contigo para confirmar el punto de encuentro y cualquier detalle adicional."
-      },
-      {
-        "numero": "04",
-        "icono": "Navigation",
-        "titulo": "Seguimiento del trayecto",
-        "descripcion": "Cuando el servicio lo requiere, compartimos la ubicación del vehículo y mantenemos comunicación durante el recorrido."
-      },
-      {
-        "numero": "05",
-        "icono": "Star",
-        "titulo": "Feedback posterior",
-        "descripcion": "Al finalizar, te pedimos tu opinión. Nos ayuda a mantener el mismo estándar en cada viaje."
+        "icono": "CalendarCheck",
+        "titulo": "Confirma tu servicio",
+        "descripcion": "Al aceptar la cotización, coordinamos contigo los detalles de tu traslado."
       }
     ]
   },
@@ -414,59 +399,20 @@
   "empresas": {
     "eyebrow": "Clientes",
     "titulo": "Nuestras empresas confían en nosotros",
-    "nota": "Logos de ejemplo. Se reemplazarán por clientes reales con su autorización.",
     "items": [
-      { "nombre": "Banca Ejemplo", "icono": "Landmark", "color": "#2563eb" },
-      { "nombre": "Minera Ejemplo", "icono": "Mountain", "color": "#b45309" },
-      { "nombre": "Hotel Ejemplo", "icono": "Hotel", "color": "#0f766e" },
-      { "nombre": "Consultora Ejemplo", "icono": "BriefcaseBusiness", "color": "#7c3aed" },
-      { "nombre": "Energía Ejemplo", "icono": "Zap", "color": "#ca8a04" },
-      { "nombre": "Logística Ejemplo", "icono": "Package", "color": "#be123c" }
+      { "nombre": "Banca", "icono": "Landmark", "color": "#2563eb" },
+      { "nombre": "Minera", "icono": "Mountain", "color": "#b45309" },
+      { "nombre": "Hotel", "icono": "Hotel", "color": "#0f766e" },
+      { "nombre": "Consultora", "icono": "BriefcaseBusiness", "color": "#7c3aed" },
+      { "nombre": "Energía", "icono": "Zap", "color": "#ca8a04" },
+      { "nombre": "Logística", "icono": "Package", "color": "#be123c" }
     ]
   },
 
   "testimonios": {
     "eyebrow": "Testimonios",
     "titulo": "Lo que dicen de nosotros",
-    "nota": "Reseñas de ejemplo para la demostración.",
-    "items": [
-      {
-        "nombre": "Mariana Castillo",
-        "estrellas": 5,
-        "comentario": "Llegué a Lima pasada la medianoche y el chofer ya me esperaba con mi nombre en la sala de arribos. Vehículo impecable y un trato muy profesional.",
-        "fecha": "Agosto 2026"
-      },
-      {
-        "nombre": "Rodrigo Salazar",
-        "estrellas": 5,
-        "comentario": "Coordinamos los traslados de nuestro directorio durante tres días de reuniones. Todo salió según lo previsto, con horarios exactos y comunicación constante.",
-        "fecha": "Julio 2026"
-      },
-      {
-        "nombre": "Andrea Vélez",
-        "estrellas": 5,
-        "comentario": "Contraté chofer a disposición para una jornada completa entre San Isidro y Miraflores. Discreción total y cero preocupaciones por el tráfico.",
-        "fecha": "Julio 2026"
-      },
-      {
-        "nombre": "James Whitaker",
-        "estrellas": 5,
-        "comentario": "Como visitante extranjero valoré mucho que el chofer hablara inglés y que mi equipo recibiera actualizaciones de cada traslado.",
-        "fecha": "Junio 2026"
-      },
-      {
-        "nombre": "Lucía Paredes",
-        "estrellas": 4,
-        "comentario": "Muy buena experiencia en el viaje a Paracas. Conducción segura, paradas coordinadas con anticipación y un vehículo muy cómodo.",
-        "fecha": "Mayo 2026"
-      },
-      {
-        "nombre": "Fernando Ríos",
-        "estrellas": 5,
-        "comentario": "El servicio con escolta para nuestros ejecutivos visitantes fue impecable: planificación previa, puntualidad y total reserva.",
-        "fecha": "Abril 2026"
-      }
-    ]
+    "items": []
   },
 
   "cta": {
@@ -482,16 +428,15 @@
   "contacto": {
     "eyebrow": "Contacto",
     "titulo": "Coordinemos tu próximo traslado",
-    "descripcion": "Escríbenos o llámanos. Respondemos consultas y confirmamos reservas en todo momento.",
+    "descripcion": "Escríbenos por WhatsApp para solicitar disponibilidad y una cotización. También puedes contactarnos por correo electrónico.",
     "imagen": "lima-miraflores.jpg",
     "imagenAlt": "Vista nocturna de edificios frente al mar en Miraflores, Lima",
     "canalesTitulo": "Canales de atención",
-    "telefonoLabel": "Teléfono",
     "emailLabel": "Correo electrónico",
     "whatsappLabel": "WhatsApp",
     "horarioLabel": "Horario de atención",
     "zonaLabel": "Zona de servicio",
-    "zona": "Lima Metropolitana, Callao y viajes a provincias",
+    "zona": "Lima Metropolitana y Callao",
     "ctaWhatsapp": "Solicitar traslado por WhatsApp",
     "ctaNota": "Te responderemos por WhatsApp para confirmar disponibilidad.",
     "infoTitulo": "Para agilizar tu reserva, indícanos",
@@ -507,16 +452,12 @@
   },
 
   "footer": {
-    "descripcion": "Transporte ejecutivo y corporativo en Lima. Seguridad, puntualidad y discreción en cada traslado.",
+    "descripcion": "Transporte privado y ejecutivo en Lima Metropolitana y Callao. Coordinación de reservas por WhatsApp y cotización a pedido.",
     "navegacionTitulo": "Navegación",
     "serviciosTitulo": "Servicios",
     "contactoTitulo": "Contacto",
     "redesTitulo": "Síguenos",
-    "redes": [
-      { "nombre": "Instagram", "icono": "instagram", "url": "#" },
-      { "nombre": "LinkedIn", "icono": "linkedin", "url": "#" },
-      { "nombre": "Facebook", "icono": "facebook", "url": "#" }
-    ],
+    "redes": [],
     "copyright": "© {anio} Lujo Mobility. Todos los derechos reservados.",
     "creditos": "Fotografías referenciales de Unsplash."
   },
@@ -524,30 +465,30 @@
   "seo": {
     "inicio": {
       "title": "Lujo Mobility | Transporte ejecutivo en Lima, Perú",
-      "description": "Transporte ejecutivo y corporativo en Lima. Traslados al aeropuerto, chofer a disposición, escolta privada y servicio VIP con vehículos premium."
+      "description": "Transporte privado y ejecutivo en Lima Metropolitana y Callao. Traslados al aeropuerto, servicio corporativo, transporte para grupos, seguridad especializada y vehículos blindados."
     },
     "nosotros": {
       "title": "Nosotros | Lujo Mobility",
-      "description": "Conoce Lujo Mobility, empresa de transporte ejecutivo en Lima enfocada en seguridad, puntualidad y atención personalizada."
+      "description": "Conoce LU ◆ JO Mobility, servicio de transporte privado y ejecutivo en Lima Metropolitana y Callao."
     },
     "servicios": {
       "title": "Servicios de transporte ejecutivo | Lujo Mobility",
-      "description": "Traslados al aeropuerto, transporte corporativo, chofer a disposición, escolta privada, eventos, larga distancia y servicio VIP en Lima."
+      "description": "Traslados al aeropuerto, transporte corporativo y para grupos, vehículos con chofer por horas, seguridad especializada, vehículos blindados y transporte para eventos."
     },
     "servicio": {
       "title": "{servicio} en Lima | Lujo Mobility"
     },
     "flota": {
       "title": "Flota de vehículos ejecutivos | Lujo Mobility",
-      "description": "SUV, sedanes y vans ejecutivas para traslados corporativos, aeropuerto y viajes de larga distancia en Lima."
+      "description": "Sedanes, vehículos ejecutivos, SUV de alta gama, minivanes y buses para traslados en Lima Metropolitana y Callao."
     },
     "comoFunciona": {
       "title": "Cómo funciona | Lujo Mobility",
-      "description": "Así funciona una reserva con Lujo Mobility: solicitud, confirmación de chofer y vehículo, contacto previo, seguimiento y feedback."
+      "description": "Solicita tu servicio de transporte privado por WhatsApp y recibe una cotización personalizada."
     },
     "contacto": {
       "title": "Contacto | Lujo Mobility",
-      "description": "Solicita tu traslado ejecutivo en Lima por WhatsApp, teléfono o correo. Atención las 24 horas."
+      "description": "Solicita disponibilidad y una cotización por WhatsApp. Atención las 24 horas en Lima Metropolitana y Callao."
     },
     "error404": {
       "title": "Página no encontrada | Lujo Mobility",

@@ -1,10 +1,10 @@
 ---
 // Footer institucional oscuro: logo, descripción, navegación, servicios, contacto y redes sociales.
 import { Image } from 'astro:assets';
-import { Clock, Mail, MapPin, Phone } from 'lucide-react';
+import { Clock, Mail, MapPin } from 'lucide-react';
 import content from '../content.json';
 import logo from '../assets/brand/logo-lujo-mobility.png';
-import { navItems, serviceUrl, services, whatsappUrl, phoneUrl, emailUrl } from '../lib/site.js';
+import { navItems, serviceUrl, services, whatsappUrl, emailUrl } from '../lib/site.js';
 import { fill } from '../lib/utils.js';
 import BrandIcon from './BrandIcon.astro';
 
@@ -40,12 +40,6 @@ const linkClass = 'text-sm text-silver-300 transition-colors hover:text-white';
       <h2 class={headingClass}>{footer.contactoTitulo}</h2>
       <ul class="space-y-4 text-sm">
         <li>
-          <a href={phoneUrl} class={`${linkClass} inline-flex items-center gap-3`}>
-            <Phone size={16} strokeWidth={1.3} aria-hidden="true" />
-            {site.telefono}
-          </a>
-        </li>
-        <li>
           <a
             href={whatsappUrl()}
             target="_blank"
@@ -73,22 +67,24 @@ const linkClass = 'text-sm text-silver-300 transition-colors hover:text-white';
         </li>
       </ul>
 
-      <h2 class={`${headingClass} mt-10`}>{footer.redesTitulo}</h2>
-      <ul class="flex gap-3">
-        {
-          footer.redes.map((red) => (
-            <li>
-              <a
-                href={red.url}
-                aria-label={red.nombre}
-                class="grid size-11 place-items-center border border-white/15 text-silver-300 transition-colors duration-500 hover:border-white/60 hover:text-white"
-              >
-                <BrandIcon name={red.icono} size={17} />
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+      {footer.redes.length > 0 && (
+        <div class="mt-10">
+          <h2 class={headingClass}>{footer.redesTitulo}</h2>
+          <ul class="flex gap-3">
+            {footer.redes.map((red) => (
+              <li>
+                <a
+                  href={red.url}
+                  aria-label={red.nombre}
+                  class="grid size-11 place-items-center border border-white/15 text-silver-300 transition-colors duration-500 hover:border-white/60 hover:text-white"
+                >
+                  <BrandIcon name={red.icono} size={17} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   </div>
 

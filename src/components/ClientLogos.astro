@@ -1,5 +1,5 @@
 ---
-// Grilla de logos de empresas (placeholders): escala de grises por defecto y color al pasar el mouse.
+// Grilla de sectores de clientes: escala de grises por defecto y color al pasar el mouse.
 import content from '../content.json';
 import Icon from './Icon.astro';
 import SectionHeading from './SectionHeading.astro';
@@ -26,6 +26,6 @@ const { empresas } = content;
         ))
       }
     </ul>
-    <p class="mt-8 text-center text-xs text-stone-ink">{empresas.nota}</p>
+    {empresas.nota && <p class="mt-8 text-center text-xs text-stone-ink">{empresas.nota}</p>}
   </div>
 </section>

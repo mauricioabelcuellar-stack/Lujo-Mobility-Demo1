@@ -43,11 +43,11 @@ No hace falta configurar variables de entorno, bases de datos ni servicios exter
 Todos los textos visibles (menú, títulos, servicios, flota, testimonios, contacto, footer, SEO y 404) están en **`src/content.json`**.
 Guardá el archivo y el navegador se actualiza solo con `npm run dev`.
 
-Datos placeholder que el cliente debe reemplazar antes de publicar:
+Datos de contacto y configuración:
 
-- `site.telefono`, `site.email`, `site.whatsapp` (solo dígitos con código de país, por ejemplo `51987654321`) y `site.whatsappVisible`.
+- `site.email`, `site.whatsapp` (solo dígitos con código de país, por ejemplo `51987654321`) y `site.whatsappVisible`. Las reservas se coordinan por WhatsApp.
 - `site.url` (dominio definitivo). **También actualizar la URL del sitemap en `public/robots.txt`.**
-- Testimonios, logos de empresas (`empresas.items`), redes sociales (`footer.redes`) y vehículos de la flota.
+- Los testimonios solo aparecen cuando hay reseñas reales en `testimonios.items`; las redes sociales solo aparecen cuando hay perfiles configurados en `footer.redes`.
 
 ## Publicación (deploy)
 
