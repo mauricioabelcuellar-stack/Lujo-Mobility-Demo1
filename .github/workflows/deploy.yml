@@ -16,6 +16,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+
       - name: Ver carpetas del servidor FTP
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
@@ -30,3 +31,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./public_html/
+          dangerous-clean-slate: true
