@@ -1,6 +1,6 @@
 {
   "site": {
-    "nombre": "Lujo 77 Mobility",
+    "nombre": "Lujo Mobility",
     "eslogan": "Movilidad privada, segura y a tu MEDIDA",
     "descripcion": "Servicio de transporte privado y ejecutivo en Lima Metropolitana y Callao, con atención personalizada para clientes particulares y corporativos.",
     "url": "https://lujomobility.net/",
@@ -452,7 +452,7 @@
   },
 
   "footer": {
-    "descripcion": "Transporte privado y ejecutivo en Lima Metropolitana y Callao. Coordinación de reservas por WhatsApp y cotización a pedido.",
+    "descripcion": "",
     "navegacionTitulo": "Navegación",
     "serviciosTitulo": "Servicios",
     "contactoTitulo": "Contacto",
