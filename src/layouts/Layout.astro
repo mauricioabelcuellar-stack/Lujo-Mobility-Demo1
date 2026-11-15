@@ -66,6 +66,12 @@ const ogImageUrl = new URL(ogImage, site).href;
     </script>
 
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    <!-- Vercel Speed Insights -->
+    <script is:inline>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
   </head>
   <body>
     <a href="#contenido" class="skip-link">{content.ui.saltarContenido}</a>
